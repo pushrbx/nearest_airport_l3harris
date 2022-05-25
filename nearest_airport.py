@@ -58,12 +58,12 @@ def load_csv_file(csv_file_path: str) -> pd.DataFrame:
     default="uk_airport_coords.csv",
     help="Path to the csv file which holds airport " "coordinates",
 )
-def cli(latitude: float, longitude: float, **kwargs):
+def cli(latitude: float, longitude: float, airport_coords_csv):
     """
     Finds the nearest airport to the provided coordinate defined by --latitude and --longitude options. If these are not
     provided, then the script prompts for them.
     """
-    df = load_csv_file(kwargs["airport_coords_csv"])
+    df = load_csv_file(airport_coords_csv)
     source_lat_rad = radians(latitude)
     source_long_rad = radians(longitude)
     closest_point_distance = sys.float_info.max
