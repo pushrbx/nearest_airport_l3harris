@@ -51,3 +51,11 @@ Options:
   --help                     Show this message and exit.
 
 ```
+
+## Linter
+
+Steps to run the linter:
+
+* Run 'black .' from the top level directory. You can set your IDE up to do this on
+  save: https://black.readthedocs.io/en/stable/integrations/editors.html
+* Run 'flake8 .' from the top level directory. You can set your IDE up to do this on save (same method as for black).
