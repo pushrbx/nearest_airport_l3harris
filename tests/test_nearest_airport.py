@@ -44,12 +44,11 @@ def test_validates_coordinate_option_type_properly(
 
 @pytest.mark.parametrize(
     "latitude,longitude,expected_wrong_option",
-    [
-        (189.55, -1.52, "latitude"),
-        (51.44, -92, "longitude")
-    ]
+    [(189.55, -1.52, "latitude"), (51.44, -92, "longitude")],
 )
-def test_validates_coordinate_option_range_properly(latitude, longitude, expected_wrong_option, cli_runner):
+def test_validates_coordinate_option_range_properly(
+    latitude, longitude, expected_wrong_option, cli_runner
+):
     result = cli_runner.invoke(cli, ["--latitude", latitude, "--longitude", longitude])
 
     expected_error_message = (
