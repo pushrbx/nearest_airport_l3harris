@@ -1,0 +1,3 @@
+-r requirements.txt
+-r linter.txt
+pytest==7.1.2
